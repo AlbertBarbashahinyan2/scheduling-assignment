@@ -52,11 +52,15 @@ The program will prompt you to:
 Example:
 
 ```
-Enter the number of processes: 4
-Enter the arrival time and burst time for process 1: 0 8
-Enter the arrival time and burst time for process 2: 1 4
-Enter the arrival time and burst time for process 3: 2 9
-Enter the arrival time and burst time for process 4: 3 5
+Enter number of processes: 4
+Enter Arrival Time for Process 1: 0
+Enter Burst Time for Process 1: 8
+Enter Arrival Time for Process 2: 1
+Enter Burst Time for Process 2: 4
+Enter Arrival Time for Process 3: 2
+Enter Burst Time for Process 3: 9
+Enter Arrival Time for Process 4: 3
+Enter Burst Time for Process 4: 5
 ```
 
 ---
@@ -81,31 +85,31 @@ The program will display:
 Example output:
 
 ```
-=== First Come First Served (FCFS) ===
-Gantt Chart: | P1 |   P2   |   P3   |   P4   |
-PID     AT     BT     WT     TAT    RT
-1       0      8      0      8      0
-2       1      4      7      11     7
-3       2      9      10     19     10
-4       3      5      18     23     18
+FCFS Scheduling:
+PID     AT      BT      WT      TAT     RT
+1       0       8       0       8       0
+2       1       4       7       11      7
+3       2       9       10      19      10
+4       3       5       18      23      18
 
-Average Waiting Time: 8.75
-Average Turnaround Time: 15.25
-Average Response Time: 8.75
+Gantt Chart:
+| P1 | P2 | P3 | P4 |
+
+Average WT = 8.75, TAT = 15.25, RT = 8.75
 ```
 
 ```
-=== Shortest Job First (SJF) ===
-Gantt Chart: | P2 | P4 |   P1   |   P3   |
-PID     AT     BT     WT     TAT    RT
-1       0      8      0      8      0
-2       1      4      7      11     7
-4       3      5      9      14     9
-3       2      9      15     24     15
+SJF Scheduling:
+PID     AT      BT      WT      TAT     RT
+1       0       8       0       8       0
+2       1       4       7       11      7
+3       2       9       15      24      15
+4       3       5       9       14      9
 
-Average Waiting Time: 7.75
-Average Turnaround Time: 14.25
-Average Response Time: 7.75
+Gantt Chart:
+| P1 | P2 | P4 | P3 |
+
+Average WT = 7.75, TAT = 14.25, RT = 7.75
 ```
 
 ---
@@ -115,3 +119,4 @@ Average Response Time: 7.75
 - Both **FCFS** and **SJF** are non-preemptive.  
 - If no process has arrived at the current time, the CPU stays idle until a process arrives.  
 - In SJF, if multiple processes have the same burst time, the one with **earlier arrival** is selected first.
+
